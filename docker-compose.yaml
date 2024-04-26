@@ -1,0 +1,26 @@
+version: '3'
+services:
+  service-a:
+    build: ./service-a
+    ports:
+      - "5000:80"
+    networks:
+      - app-network
+
+  service-b:
+    build: ./service-b
+    ports:
+      - "5001:80"
+    networks:
+      - app-network
+
+  service-c:
+    build: ./service-c
+    ports:
+      - "5002:80"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
